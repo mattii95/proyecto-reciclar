@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_reciclar/src/pages/mapa_page.dart';
 import 'package:proyecto_reciclar/src/widgets/custom_bottom_navigator.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,9 +11,7 @@ class HomePage extends StatelessWidget {
         title: Text('Proyecto Reciclar'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text('Hola Mundo'),
-      ),
+      body: MapaPage(),
       bottomNavigationBar: CustomBottomNavigator(),
     );
   }
