@@ -16,7 +16,6 @@ class MapaModel {
     this.lat,
     this.lng,
     this.icon,
-    this.idCategoria,
     this.activo,
   });
 
@@ -24,7 +23,6 @@ class MapaModel {
   String lat;
   String lng;
   String icon;
-  int idCategoria;
   bool activo;
 
   factory MapaModel.fromJson(Map<String, dynamic> json) => MapaModel(
@@ -32,7 +30,6 @@ class MapaModel {
         lat: json["lat"],
         lng: json["lng"],
         icon: json["icon"],
-        idCategoria: json["idCategoria"],
         activo: json["Activo"],
       );
 
@@ -41,7 +38,6 @@ class MapaModel {
         "lat": lat,
         "lng": lng,
         "icon": icon,
-        "idCategoria": idCategoria,
         "Activo": activo,
       };
 }

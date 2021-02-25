@@ -10,12 +10,14 @@ class MapaProvider {
     <?xml version="1.0" encoding="utf-8"?>
       <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
         <soap:Body>
-          <BuscarPuntos xmlns="http://tempuri.org/" />
+          <BuscarPuntos xmlns="http://courrouxdigital.com/" />
         </soap:Body>
       </soap:Envelope>
   ''';
 
-  final url = "http://192.168.0.111/wspr/ws.asmx/BuscarPuntos";
+  final url = "https://courrouxdigital.com/ws.asmx/BuscarPuntos";
+
+  List<MapaModel> puntos = [];
 
   MapaProvider() {
     this.getMarkers();
@@ -26,7 +28,7 @@ class MapaProvider {
       url,
       headers: {
         "Content-Type": "text/xml; charset=utf-8",
-        "SOAPAction": "http://tempuri.org/BuscarPuntos"
+        "SOAPAction": "http://courrouxdigital.com/BuscarPuntos"
       },
       body: soap,
     );
@@ -40,8 +42,6 @@ class MapaProvider {
 
       List<MapaModel> markers =
           jsonDecode.map((e) => MapaModel.fromJson(e)).toList();
-
-      print(markers);
 
       return markers;
     } else {
